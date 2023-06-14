@@ -1,13 +1,55 @@
 // TODO: Include packages needed for this application
+const fs = require('fs');
+const inquirer = require('inquirer');
+const prompt = inquirer.createPromptModule();
 
 // TODO: Create an array of questions for user input
-const questions = [];
+const questions = [
+    {
+        message: 'What is your project\'s title',
+        name: 'title',
+        default: 'project 1'
+    },
+    {
+        message: 'Please enter your project\'s description.',
+        name: 'description',
+        default: 'cool project very cool'
+    },
+    {
+        message: 'Please enter any installation instructions for your project.',
+        name: 'installation',
+        default: 'install it'
+    },
+    {
+        message: 'Please enter any usage information for your project.',
+        name: 'usage',
+        default: 'click the links'
+    },
+    {
+        message: 'Please enter any guidelines for future contributors.',
+        name: 'contributing',
+        default: 'must request check from owner before merging branches'
+    },
+    {
+        message: 'Please enter information regarding tests for your project.',
+        name: 'tests',
+        default: 'use mocha'
+    },
+    {
+        type: 'list',
+        message: 'Choose the corresponding license for your project:',
+        choices: ['the MIT License', 'Mozilla Public License 2.0', 'Open Database License (ODbL)' ],
+        name: 'license',
+        default: 'the MIT License'
+    }
+];
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+prompt(questions).then((answers) => console.table(answers)); 
+// // TODO: Create a function to write README file
+// function writeToFile(fileName, data) {}
 
-// TODO: Create a function to initialize app
-function init() {}
+// // TODO: Create a function to initialize app
+// function init() {}
 
-// Function call to initialize app
-init();
+// // Function call to initialize app
+// init();
