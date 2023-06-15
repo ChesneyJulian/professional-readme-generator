@@ -2,6 +2,7 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const prompt = inquirer.createPromptModule();
+const genMarkdown = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -41,15 +42,32 @@ const questions = [
         choices: ['the MIT License', 'Mozilla Public License 2.0', 'Open Database License (ODbL)' ],
         name: 'license',
         default: 'the MIT License'
+    },
+    {
+        message: 'Please enter your GitHub username.',
+        name: 'gitHub',
+        default: 'ChesneyJulian'
+    },
+    {
+        message: 'Please enter your preferred email address.',
+        name: 'email',
+        default: 'user.email@yahoo.com'
     }
 ];
 
-prompt(questions).then((answers) => console.table(answers)); 
+
+
 // // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    const markdown = genMarkdown(data);
+    fs.writeFileSync('new-README.md', markdown);
+}
+
 
 // // TODO: Create a function to initialize app
-// function init() {}
+function init() {
+    prompt(questions).then((answers) => writeToFile('new-README.md', answers)); 
+}
 
 // // Function call to initialize app
-// init();
+init();
