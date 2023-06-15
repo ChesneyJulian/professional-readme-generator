@@ -39,7 +39,7 @@ const questions = [
     {
         type: 'list',
         message: 'Choose the corresponding license for your project:',
-        choices: ['the MIT License', 'Mozilla Public License 2.0', 'Open Database License (ODbL)' ],
+        choices: ['MIT', 'Mozilla', 'ODbL' ],
         name: 'license',
         default: 'the MIT License'
     },
@@ -67,8 +67,6 @@ function writeToFile(fileName, answers) {
 // // TODO: Create a function to initialize app
 function init() {
     prompt(questions).then((answers) => {
-        renderLicenseBadge(answers.license);
-        renderLicenseSection(answers.license);
          writeToFile('new-README.md', answers);
         });
     

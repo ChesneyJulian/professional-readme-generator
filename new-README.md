@@ -15,10 +15,9 @@
   ## Usage
   click the links
   ## License
-    
-    Click the badge to view information on this license.
-    the MIT License
-    [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  This project uses the ODbL license. Click the link to view the license's webpage.
+  [![License](https://img.shields.io/badge/License-ODbL-brightgreen.svg)]
+  [license](https://opendatacommons.org/licenses/odbl/)
   ## Contributing
   must request check from owner before merging branches
   ## Tests

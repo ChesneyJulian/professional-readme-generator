@@ -1,41 +1,40 @@
-const licenseArr = [];
-const licenseSec = '';
+// create object to store links for license badges and webpages
+const licenseLinks = {
+  MIT: ['MIT-yellow.svg', 'https://opensource.org/licenses/MIT'],
+  Mozilla: ['MPL_2.0-brightgreen.svg', 'https://opensource.org/licenses/MPL-2.0'],
+  ODbL: ['ODbL-brightgreen.svg', 'https://opendatacommons.org/licenses/odbl/']
+}
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
+// LINKS ARE INCLUDED AFTER BADGE TO MAKE THEM CLICKABLE LINKS
 function renderLicenseBadge(license) {
-  const mitBadge = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
-  const mozillaBadge = `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`;
-  const openDataBaseBadge = `[![License: ODbL](https://img.shields.io/badge/License-ODbL-brightgreen.svg)](https://opendatacommons.org/licenses/odbl/)`;
-  if (license === 'the MIT License') {
-    licenseArr.push(mitBadge);
-  } else if (license === 'Mozilla Public License 2.0') {
-    licenseArr.push(mozillaBadge);
-  } else if (license === 'Open Database License (ODbL)') {
-    licenseArr.push(openDataBaseBadge);
-  } else {
-    return '';
-  }
-  console.log(licenseArr);
+  // const mitBadge = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
+  // const mozillaBadge = `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`;
+  // const openDataBaseBadge = `[![License: ODbL](https://img.shields.io/badge/License-ODbL-brightgreen.svg)](https://opendatacommons.org/licenses/odbl/)`;
+ if (license) {
+  return `[![License](https://img.shields.io/badge/License-${licenseLinks[license][0]})]`
+ } else {
+  return ` `;
+ }
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  if (license) {
+    return `[${license} URL](${licenseLinks[license][1]})`
+  } else {
+    return ` `;
+  }
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  if (license) {
-    licenseArr.push(
-    `## License
-    
-    Click the badge to view information on this license.
-    ${license}
-    ${licenseArr[0]}`);
-    console.log(licenseArr);
-  } else {
-    console.log('');
-  }
+ if (license) {
+  return `## License
+  This project uses the ${license} license. Click the link to view the license's webpage.`
+ }
 }
 
 // TODO: Create a function to generate markdown for README
@@ -56,7 +55,12 @@ function generateMarkdown(data) {
   ${data.installation}
   ## Usage
   ${data.usage}
-  ${licenseArr[1]}
+  
+  ${renderLicenseSection(data.license)}
+
+  ${renderLicenseBadge(data.license)}
+
+  ${renderLicenseLink(data.license)}
   ## Contributing
   ${data.contributing}
   ## Tests
