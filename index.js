@@ -2,39 +2,39 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const prompt = inquirer.createPromptModule();
-const {generateMarkdown, renderLicenseBadge ,renderLicenseSection} = require('./utils/generateMarkdown.js');
+const {generateMarkdown} = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 const questions = [
     {
         message: 'What is your project\'s title',
         name: 'title',
-        default: 'project 1'
+        default: 'Project'
     },
     {
         message: 'Please enter your project\'s description.',
         name: 'description',
-        default: 'cool project very cool'
+        default: 'Cool project does many things!'
     },
     {
         message: 'Please enter any installation instructions for your project.',
         name: 'installation',
-        default: 'install it'
+        default: 'Download files'
     },
     {
         message: 'Please enter any usage information for your project.',
         name: 'usage',
-        default: 'click the links'
+        default: 'Click links and enter input when asked'
     },
     {
         message: 'Please enter any guidelines for future contributors.',
         name: 'contributing',
-        default: 'must request check from owner before merging branches'
+        default: 'Open new repository and give credit to initial project'
     },
     {
         message: 'Please enter information regarding tests for your project.',
         name: 'tests',
-        default: 'use mocha'
+        default: 'Tested with Mocha and VSCode debugger'
     },
     {
         type: 'list',
@@ -46,7 +46,7 @@ const questions = [
     {
         message: 'Please enter your GitHub username.',
         name: 'gitHub',
-        default: 'ChesneyJulian'
+        default: 'UserName'
     },
     {
         message: 'Please enter your preferred email address.',
@@ -55,17 +55,19 @@ const questions = [
     }
 ];
 
-
-
 // // TODO: Create a function to write README file
 function writeToFile(fileName, answers) {
     fs.writeFileSync(fileName, generateMarkdown(answers));
 }
 
-
 // // TODO: Create a function to initialize app
 function init() {
-    prompt(questions).then((answers) => writeToFile('new-README.md', answers));   
+    // create conditional to check if output folder exists and creates an output directory if it does not exist
+    if (!fs.existsSync('output')) {
+        fs.mkdirSync('output');
+    };
+    // runs prompt module then writes README inside output directory using data from answers
+    prompt(questions).then((answers) => writeToFile('output/README.md', answers));   
 }
 
 // // Function call to initialize app

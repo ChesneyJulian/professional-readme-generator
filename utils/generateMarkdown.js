@@ -1,18 +1,18 @@
 // create object to store links for license badges and webpages
 const licenseLinks = {
-  MIT: ['MIT-yellow.svg', 'https://opensource.org/licenses/MIT'],
-  Mozilla: ['MPL_2.0-brightgreen.svg', 'https://opensource.org/licenses/MPL-2.0'],
-  ODbL: ['ODbL-brightgreen.svg', 'https://opendatacommons.org/licenses/odbl/'],
-  Apache: ['Apache_2.0-blue.svg', 'https://opensource.org/licenses/Apache-2.0'],
-  CC0: ['CC0_1.0-lightgrey.svg', 'http://creativecommons.org/publicdomain/zero/1.0/'],
-  IBM: ['IPL_1.0-blue.svg', 'https://opensource.org/licenses/IPL-1.0']
+  MIT: {image:'MIT-yellow.svg', source: 'https://opensource.org/licenses/MIT'},
+  Mozilla: {image:'MPL_2.0-brightgreen.svg', source: 'https://opensource.org/licenses/MPL-2.0'},
+  ODbL: {image:'ODbL-brightgreen.svg', source: 'https://opendatacommons.org/licenses/odbl/'},
+  Apache: {image:'Apache_2.0-blue.svg', source: 'https://opensource.org/licenses/Apache-2.0'},
+  CC0: {image:'CC0_1.0-lightgrey.svg', source: 'http://creativecommons.org/publicdomain/zero/1.0/'},
+  IBM: {image:'IPL_1.0-blue.svg', source: 'https://opensource.org/licenses/IPL-1.0'},
 
 }
 // TODO: Create a function that returns a license badge based on which license is passed in
 function renderLicenseBadge(license) {
   // conditional so if license is not equal to 'No License', the correct license's badge will be displayed
  if (license !== 'No License') {
-  return `![License](https://img.shields.io/badge/License-${licenseLinks[license][0]})`
+  return `![License](https://img.shields.io/badge/License-${licenseLinks[license].image})`
  } else {
   // If there is no license, return an empty string
   return '';
@@ -23,7 +23,7 @@ function renderLicenseBadge(license) {
 function renderLicenseLink(license) {
   // conditional so if license is selected (not 'No License'), the correct link will be returned for screen display
   if (license !== 'No License') {
-    return `[${license} URL](${licenseLinks[license][1]})`
+    return `[${license} URL](${licenseLinks[license].source})`
   } else {
     // If there is no license, return an empty string
     return '';
