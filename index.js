@@ -39,7 +39,7 @@ const questions = [
     {
         type: 'list',
         message: 'Choose the corresponding license for your project:',
-        choices: ['MIT', 'Mozilla', 'ODbL' ],
+        choices: ['MIT', 'Mozilla', 'ODbL', 'No License' ],
         name: 'license',
         default: 'the MIT License'
     },
