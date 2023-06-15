@@ -2,7 +2,7 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const prompt = inquirer.createPromptModule();
-const genMarkdown = require('./utils/generateMarkdown.js');
+const {generateMarkdown, renderLicenseBadge ,renderLicenseSection} = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -58,15 +58,20 @@ const questions = [
 
 
 // // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    const markdown = genMarkdown(data);
-    fs.writeFileSync('new-README.md', markdown);
+function writeToFile(fileName, answers) {
+    fs.writeFileSync(fileName, generateMarkdown(answers));
+    
 }
 
 
 // // TODO: Create a function to initialize app
 function init() {
-    prompt(questions).then((answers) => writeToFile('new-README.md', answers)); 
+    prompt(questions).then((answers) => {
+        renderLicenseBadge(answers.license);
+        renderLicenseSection(answers.license);
+         writeToFile('new-README.md', answers);
+        });
+    
 }
 
 // // Function call to initialize app

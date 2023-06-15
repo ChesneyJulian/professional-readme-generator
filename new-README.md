@@ -1,6 +1,6 @@
-# Professional README Generator
+# project 1
   ## Description
-  This project creates a command-line executed program to generate a professional README.md document.
+  cool project very cool
   
   ## Table of Contents
   - [Installation](#installation)
@@ -11,15 +11,18 @@
   - [Questions](#questions)
   
   ## Installation
-  Download the packages along with the code and run the files in your console.
+  install it
   ## Usage
-  Run code using node index.js and follow the prompts in your terminal
+  click the links
   ## License
-  content
+    
+    Click the badge to view information on this license.
+    the MIT License
+    [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   ## Contributing
-  Please make changes in separate branches and submit changes for peer review.
+  must request check from owner before merging branches
   ## Tests
-  Tested in vscode using debugger
+  use mocha
   ## Questions
   Visit my GitHub for more insight:  [ChesneyJulian's GitHub](https://github.com/ChesneyJulian/)
   
