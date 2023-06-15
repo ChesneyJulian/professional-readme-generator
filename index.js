@@ -39,9 +39,9 @@ const questions = [
     {
         type: 'list',
         message: 'Choose the corresponding license for your project:',
-        choices: ['MIT', 'Mozilla', 'ODbL', 'No License' ],
+        choices: ['MIT', 'Mozilla', 'ODbL', 'Apache', 'CC0', 'IBM', 'No License' ],
         name: 'license',
-        default: 'the MIT License'
+        default: 'MIT'
     },
     {
         message: 'Please enter your GitHub username.',
@@ -60,16 +60,12 @@ const questions = [
 // // TODO: Create a function to write README file
 function writeToFile(fileName, answers) {
     fs.writeFileSync(fileName, generateMarkdown(answers));
-    
 }
 
 
 // // TODO: Create a function to initialize app
 function init() {
-    prompt(questions).then((answers) => {
-         writeToFile('new-README.md', answers);
-        });
-    
+    prompt(questions).then((answers) => writeToFile('new-README.md', answers));   
 }
 
 // // Function call to initialize app

@@ -2,51 +2,58 @@
 const licenseLinks = {
   MIT: ['MIT-yellow.svg', 'https://opensource.org/licenses/MIT'],
   Mozilla: ['MPL_2.0-brightgreen.svg', 'https://opensource.org/licenses/MPL-2.0'],
-  ODbL: ['ODbL-brightgreen.svg', 'https://opendatacommons.org/licenses/odbl/']
+  ODbL: ['ODbL-brightgreen.svg', 'https://opendatacommons.org/licenses/odbl/'],
+  Apache: ['Apache_2.0-blue.svg', 'https://opensource.org/licenses/Apache-2.0'],
+  CC0: ['CC0_1.0-lightgrey.svg', 'http://creativecommons.org/publicdomain/zero/1.0/'],
+  IBM: ['IPL_1.0-blue.svg', 'https://opensource.org/licenses/IPL-1.0']
+
 }
 // TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-// LINKS ARE INCLUDED AFTER BADGE TO MAKE THEM CLICKABLE LINKS
 function renderLicenseBadge(license) {
-  // const mitBadge = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
-  // const mozillaBadge = `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`;
-  // const openDataBaseBadge = `[![License: ODbL](https://img.shields.io/badge/License-ODbL-brightgreen.svg)](https://opendatacommons.org/licenses/odbl/)`;
+  // conditional so if license is not equal to 'No License', the correct license's badge will be displayed
  if (license !== 'No License') {
-  return `[![License](https://img.shields.io/badge/License-${licenseLinks[license][0]})]`
+  return `![License](https://img.shields.io/badge/License-${licenseLinks[license][0]})`
  } else {
+  // If there is no license, return an empty string
   return '';
  }
-}
+};
 
 // TODO: Create a function that returns the license link
-// If there is no license, return an empty string
 function renderLicenseLink(license) {
+  // conditional so if license is selected (not 'No License'), the correct link will be returned for screen display
   if (license !== 'No License') {
     return `[${license} URL](${licenseLinks[license][1]})`
   } else {
+    // If there is no license, return an empty string
     return '';
   }
-}
+};
+
+// create function to add navigation link to table of contents if license is selected and not 'No License'
 function renderLicenseNavigation(license) {
   if (license !== 'No License') {
     return `- [License](#license)`
   } else {
     return '';
   }
-}
+};
+
 // TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
 function renderLicenseSection(license) {
+  // conditional so if license is selected, a section for license will appear in the readme
  if (license !== 'No License') {
   return `## License
   This project is covered under the ${license} license. Click the link to view the license's webpage.`
  } else {
+  // If there is no license, return an empty string
   return '';
  }
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+  // insert variable data using calls from inquirer data
   return `# ${data.title}
   ## Description  
 
@@ -82,6 +89,4 @@ function generateMarkdown(data) {
 
 module.exports = {
   generateMarkdown,
-  renderLicenseSection,
-  renderLicenseBadge
 };
