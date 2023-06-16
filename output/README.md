@@ -1,32 +1,31 @@
-# Project
+# Professional README Generator
   ## Description  
 
-  ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+  
 
-  Cool project does many things!            
+  This program runs in the command-line using node inquirer to allow users to generate a professional README.md             
   
   ## Table of Contents
   - [Installation](#installation)
   - [Usage](#usage)
-  - [License](#license)
+  
   - [Contributing](#contributing)
   - [Tests](#tests)
   - [Questions](#questions)
   
   ## Installation
-  Download files
+  Download all files including packages.
   ## Usage
-  Click links and enter input when asked
+  Run 'node index.js' in terminal from root directory to begin prompt sequence. Enter input for each prompt or select item from list using arrows and enter key. Once prompts are completed, your README.md will be generated!
 
-  ## License
-  This project is covered under the MIT license. Click the link to view the license's webpage.
-
-  [MIT URL](https://opensource.org/licenses/MIT)
-  ## Contributing
-  Open new repository and give credit to initial project
-  ## Tests
-  Tested with Mocha and VSCode debugger
-  ## Questions
-  Visit my GitHub for more insight:  [UserName's GitHub](https://github.com/UserName/)
   
-  Please email me at [user.email@yahoo.com](user.email@yahoo.com) for further questions.
+
+  
+  ## Contributing
+  Create new repository and give credit by citing this repository.
+  ## Tests
+  Tested using node Jest
+  ## Questions
+  Visit my GitHub for more insight:  [ChesneyJulian's GitHub](https://github.com/ChesneyJulian/)
+  
+  Please email me at [chesney.julian724@gmail.com](chesney.julian724@gmail.com) for further questions.

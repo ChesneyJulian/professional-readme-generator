@@ -1,12 +1,23 @@
 // create object to store links for license badges and webpages
 const licenseLinks = {
-  MIT: {image:'MIT-yellow.svg', source: 'https://opensource.org/licenses/MIT'},
-  Mozilla: {image:'MPL_2.0-brightgreen.svg', source: 'https://opensource.org/licenses/MPL-2.0'},
-  ODbL: {image:'ODbL-brightgreen.svg', source: 'https://opendatacommons.org/licenses/odbl/'},
-  Apache: {image:'Apache_2.0-blue.svg', source: 'https://opensource.org/licenses/Apache-2.0'},
-  CC0: {image:'CC0_1.0-lightgrey.svg', source: 'http://creativecommons.org/publicdomain/zero/1.0/'},
-  IBM: {image:'IPL_1.0-blue.svg', source: 'https://opensource.org/licenses/IPL-1.0'},
-
+  MIT: {
+    image:'MIT-yellow.svg', 
+    source: 'https://opensource.org/licenses/MIT'},
+  Mozilla: {
+    image:'MPL_2.0-brightgreen.svg',
+    source: 'https://opensource.org/licenses/MPL-2.0'},
+  ODbL: {
+    image:'ODbL-brightgreen.svg', 
+    source: 'https://opendatacommons.org/licenses/odbl/'},
+  Apache: {
+    image:'Apache_2.0-blue.svg', 
+    source: 'https://opensource.org/licenses/Apache-2.0'},
+  CC0: {
+    image:'CC0_1.0-lightgrey.svg', 
+    source: 'http://creativecommons.org/publicdomain/zero/1.0/'},
+  IBM: {
+    image:'IPL_1.0-blue.svg', 
+    source: 'https://opensource.org/licenses/IPL-1.0'},
 }
 // TODO: Create a function that returns a license badge based on which license is passed in
 function renderLicenseBadge(license) {
