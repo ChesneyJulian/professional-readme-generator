@@ -1,9 +1,9 @@
-# README Generator
+# New Test Project
   ## Description  
 
   ![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)
 
-  Generate a README in Markdown            
+  Project uses javascript and node            
   
   ## Table of Contents
   - [Installation](#installation)
@@ -16,7 +16,7 @@
   ## Installation
   Download files
   ## Usage
-  Run node index.js and answer all prompts
+  Run node index.js in command-line
 
   ## License
   This project is covered under the Apache license. Click the link to view the license's webpage.
@@ -25,8 +25,8 @@
   ## Contributing
   Open new repository and give credit to initial project
   ## Tests
-  No tests for this project
+  Tested with Mocha and VSCode debugger
   ## Questions
-  Visit my GitHub for more insight:  [ChesneyJulian's GitHub](https://github.com/ChesneyJulian/)
+  Visit my GitHub for more insight:  [Mary Smith's GitHub](https://github.com/Mary Smith/)
   
-  Please email me at [chesney.julian@gmail.com](mailto:chesney.julian@gmail.com) for further questions.
+  Please email me at [user.email@yahoo.com](mailto:user.email@yahoo.com) for further questions.
