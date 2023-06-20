@@ -11,6 +11,8 @@
   
   ## Deployed Program
   ### Screen Recording
+  Follow links to screenrecording demonstrating program usage: 
+  - [screen-recording](https://github.com/ChesneyJulian/professional-readme-generator/blob/main/screen-recording-readme-generator.mov)
   ## Usage
   Run 'node index.js' in terminal from root directory to begin prompt sequence. Enter input for each prompt or select item from list using arrows and enter key. Once prompts are completed, your README.md will be generated!
 

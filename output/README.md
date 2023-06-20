@@ -1,9 +1,9 @@
-# Project
+# README Generator
   ## Description  
 
-  ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+  ![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)
 
-  Cool project does many things!            
+  Generate a README in Markdown            
   
   ## Table of Contents
   - [Installation](#installation)
@@ -16,17 +16,17 @@
   ## Installation
   Download files
   ## Usage
-  Click links and enter input when asked
+  Run node index.js and answer all prompts
 
   ## License
-  This project is covered under the MIT license. Click the link to view the license's webpage.
+  This project is covered under the Apache license. Click the link to view the license's webpage.
 
-  [MIT URL](https://opensource.org/licenses/MIT)
+  [Apache URL](https://opensource.org/licenses/Apache-2.0)
   ## Contributing
   Open new repository and give credit to initial project
   ## Tests
-  Tested with Mocha and VSCode debugger
+  No tests for this project
   ## Questions
-  Visit my GitHub for more insight:  [UserName's GitHub](https://github.com/UserName/)
+  Visit my GitHub for more insight:  [ChesneyJulian's GitHub](https://github.com/ChesneyJulian/)
   
-  Please email me at [chesney.julian724@gmail.com](mailto:chesney.julian724@gmail.com) for further questions.
+  Please email me at [chesney.julian@gmail.com](mailto:chesney.julian@gmail.com) for further questions.
